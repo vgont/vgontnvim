@@ -10,5 +10,6 @@
   "nvim-lspconfig": { "branch": "master", "commit": "e5bf88e5ea1c4cea5ea96b1e970cb264f7a401a1" },
   "nvim-treesitter": { "branch": "master", "commit": "d34e62afd3e483fe0fa2f24b6323f3bb1d35ddcc" },
   "oil": { "branch": "master", "commit": "add50252b5e9147c0a09d36480d418c7e2737472" },
+  "supermaven-nvim": { "branch": "main", "commit": "07d20fce48a5629686aefb0a7cd4b25e33947d50" },
   "vesper": { "branch": "main", "commit": "4e96a753a964192b5904598e64366a93eef5449d" }
 }
