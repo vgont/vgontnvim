@@ -12,6 +12,9 @@ return {
       list = {
         max_items = 10
       },
+      documentation = {
+        auto_show = true,
+      },
     },
     appearance = {
       use_nvim_cmp_as_default = true,
