@@ -23,7 +23,7 @@ return {
       'javascript',
       'typescript',
       'yaml',
-      'elixir'
+      'elixir',
     },
     highlight = { enable = true },
     incremental_selection = {
@@ -35,10 +35,7 @@ return {
         node_decremental = '<bs>',
       },
     },
-    indent = {
-      enable = true,
-      disable = { 'yaml' },
-    },
+    indent = { enable = true },
   },
   config = function(_, opts)
     require('nvim-treesitter.configs').setup(opts)
