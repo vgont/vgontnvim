@@ -3,7 +3,7 @@ return {
   event = 'InsertEnter',
   opts = {
     keymaps = {
-      accept_suggestion = '<Tab>',
+      accept_suggestion = '<C-Tab>',
     },
   },
 }
