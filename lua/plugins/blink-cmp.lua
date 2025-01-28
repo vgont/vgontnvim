@@ -6,7 +6,9 @@ return {
   ---@type blink.cmp.Config
   opts = {
     keymap = {
-      ['<Tab>'] = { 'select_next', 'fallback' }
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
+      ['<C-c>'] = { 'hide_documentation', 'fallback' },
     },
     completion = {
       list = {
