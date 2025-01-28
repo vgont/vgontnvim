@@ -14,6 +14,7 @@ return {
   {
     'echasnovski/mini.diff',
     version = false,
+    event = { 'BufEnter' },
     main = 'mini.diff',
     opts = {},
     keys = {
