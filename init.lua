@@ -25,3 +25,5 @@ vim.keymap.set("n", "<leader>q", function()
     end
 end)
 
+vim.api.nvim_create_user_command('Fix', ':EslintFixAll', {desc = "Fix all the errors in ESLint"})
+
