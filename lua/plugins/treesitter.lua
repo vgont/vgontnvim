@@ -5,6 +5,8 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     ensure_installed = {
+      'markdown',
+      'markdown_inline',
       'bash',
       'fish',
       'gitcommit',
