@@ -18,11 +18,16 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
 
 vim.keymap.set("n", "<leader>q", function()
-    if #vim.fn.getbufinfo({buflisted = 1}) <= 1 then
-        vim.cmd("Oil")
-    else
-        vim.cmd("bd")
-    end
+  if #vim.fn.getbufinfo({buflisted = 1}) <= 1 then
+    vim.cmd("Oil")
+  else
+    vim.cmd("bd")
+  end
+end)
+
+vim.keymap.set("n", "<leader>w", function()
+  vim.cmd("w")
+  vim.cmd("Fix")
 end)
 
 vim.api.nvim_create_user_command('Fix', ':EslintFixAll', {desc = "Fix all the errors in ESLint"})
