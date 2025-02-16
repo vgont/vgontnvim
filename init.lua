@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>gc", function()
   vim.cmd("split")
   vim.cmd("wincmd j")
   vim.cmd("bprevious")
-
+  vim.cmd("wincmd k")
 end)
 
 vim.keymap.set("n", "<leader>w", function()
