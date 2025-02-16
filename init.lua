@@ -4,6 +4,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set clipboard=unnamedplus")
 vim.cmd [[
   highlight Normal guibg=none
   highlight NonText guibg=none
@@ -23,6 +24,15 @@ vim.keymap.set("n", "<leader>q", function()
   else
     vim.cmd("bd")
   end
+end)
+
+-- commit seeing file
+vim.keymap.set("n", "<leader>gc", function()
+  vim.cmd("Git commit")
+  vim.cmd("split")
+  vim.cmd("wincmd j")
+  vim.cmd("bprevious")
+
 end)
 
 vim.keymap.set("n", "<leader>w", function()
