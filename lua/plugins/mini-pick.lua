@@ -8,7 +8,8 @@ return {
     }
   },
   keys = {
-    vim.keymap.set("n", "<leader>f", ":Pick files<CR>", {noremap=true, silent=true}),
-    vim.keymap.set("n", "<leader>b", ":Pick buffers<CR>", {noremap=true, silent=true}),
+    { "ff", "<cmd>Pick files<CR>", desc = "Open Pick files" },
+    { "fb", "<cmd>Pick buffers<CR>", desc = "Open Pick buffers" },
+    { "fg", "<cmd>Pick grep<CR>", desc = "Open Pick buffers" },
   }
 }
