@@ -6,7 +6,6 @@ return {
     opts = {},
     keys = {
       { "<leader>ga", ":Git add %<CR>" },
-      { "<leader>gc", ":Git commit<CR>" },
       { "<leader>gs", ":Git status<CR>" },
       { "<leader>gp", ":Git push<CR>" },
     },
