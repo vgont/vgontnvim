@@ -26,6 +26,7 @@ return {
       'typescript',
       'yaml',
       'elixir',
+      'go',
     },
     highlight = { enable = true },
     incremental_selection = {
