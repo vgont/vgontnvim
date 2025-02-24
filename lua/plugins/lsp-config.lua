@@ -16,6 +16,7 @@ return {
           'rust_analyzer',
           'pyright',
           'elixirls',
+          'gopls'
         }
       })
     end
@@ -30,9 +31,8 @@ return {
       lspconfig.eslint.setup({})
       lspconfig.rust_analyzer.setup({})
       lspconfig.pyright.setup({})
-      lspconfig.elixirls.setup({
-        cmd = {'elixir-ls'},
-      })
+      lspconfig.elixirls.setup({ cmd = {'elixir-ls'} })
+      lspconfig.gopls.setup({})
 
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

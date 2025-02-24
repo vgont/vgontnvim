@@ -12,6 +12,7 @@
   "mini.icons": { "branch": "main", "commit": "ec61af6e606fc89ee3b1d8f2f20166a3ca917a36" },
   "mini.move": { "branch": "main", "commit": "c8b30e92dd2668dd6e56a9a23cb7d4ee38c2266d" },
   "mini.notify": { "branch": "main", "commit": "f8c84f89c8d981a979f915bd64a2f97bbad285d4" },
+  "mini.operators": { "branch": "main", "commit": "81e5059268154f5a8b594c95748968febdd539e3" },
   "mini.pairs": { "branch": "main", "commit": "1a3e73649c0eaef2f6c48ce1e761c6f0a7c11918" },
   "mini.pick": { "branch": "main", "commit": "bdd189e6b7741177db53875cbc6071f1c8dc6fbd" },
   "mini.statusline": { "branch": "main", "commit": "83209bfbca156f9e4a5ec47a2a8ce1e5ce26311d" },
