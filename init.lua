@@ -26,6 +26,9 @@ vim.keymap.set("n", "<leader>q", function()
   end
 end)
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- commit seeing file
 vim.keymap.set("n", "<leader>gc", function()
   vim.cmd("Git commit")
