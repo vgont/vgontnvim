@@ -9,8 +9,8 @@ return {
   },
   keys = {
     { "<leader>f", "<cmd>Pick files tool='git'<CR>", desc = "Open Pick files with git" },
-    { "ff", "<cmd>Pick files tool='rg'<CR>", desc = "Open Pick files with fd" },
-    { "fb", "<cmd>Pick buffers<CR>", desc = "Open Pick buffers" },
-    { "fg", "<cmd>Pick grep<CR>", desc = "Open Pick buffers" },
+    { "<leader>ff", "<cmd>Pick files tool='rg'<CR>", desc = "Open Pick files with fd" },
+    { "<leader>fb", "<cmd>Pick buffers<CR>", desc = "Open Pick buffers" },
+    { "<leader>fg", "<cmd>Pick grep<CR>", desc = "Open Pick buffers" },
   }
 }
