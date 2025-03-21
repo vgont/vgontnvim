@@ -16,7 +16,9 @@ return {
           'rust_analyzer',
           'pyright',
           'elixirls',
-          'gopls'
+          'gopls',
+          'astro',
+          'tailwindcss'
         }
       })
     end
@@ -33,6 +35,8 @@ return {
       lspconfig.pyright.setup({})
       lspconfig.elixirls.setup({ cmd = {'elixir-ls'} })
       lspconfig.gopls.setup({})
+      lspconfig.astro.setup({})
+      lspconfig.tailwindcss.setup({ cmd = {'tailwindcss-language-server'} })
 
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
