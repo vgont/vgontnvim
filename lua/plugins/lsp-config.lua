@@ -37,6 +37,7 @@ return {
       lspconfig.gopls.setup({})
       lspconfig.astro.setup({})
       lspconfig.tailwindcss.setup({ cmd = {'tailwindcss-language-server'} })
+      lspconfig.jdtls.setup({})
 
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
