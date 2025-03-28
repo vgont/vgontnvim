@@ -4,7 +4,7 @@ return {
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   lazy = false,
   keys = {
-    { "<leader><Tab>", "<cmd>Oil --float<CR>", desc = "Open Oil -- Float" },
+    { "<leader>d", "<cmd>Oil --float<CR>", desc = "Open Oil -- Float" },
   },
   opts = {
     default_file_explorer = true,
