@@ -31,7 +31,6 @@ return {
       lspconfig.lua_ls.setup({})
       lspconfig.ts_ls.setup({})
       lspconfig.eslint.setup({})
-      lspconfig.rust_analyzer.setup({})
       lspconfig.pyright.setup({})
       lspconfig.elixirls.setup({ cmd = {'elixir-ls'} })
       lspconfig.gopls.setup({})
