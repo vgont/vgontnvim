@@ -18,7 +18,7 @@ return {
           'elixirls',
           'gopls',
           'astro',
-          'tailwindcss'
+          'tailwindcss',
         }
       })
     end
@@ -36,7 +36,8 @@ return {
       lspconfig.gopls.setup({})
       lspconfig.astro.setup({})
       lspconfig.tailwindcss.setup({ cmd = {'tailwindcss-language-server'} })
-
+      require('java').setup()
+      lspconfig.jdtls.setup({})
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
