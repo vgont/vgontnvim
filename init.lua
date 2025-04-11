@@ -29,15 +29,6 @@ end)
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- commit seeing file
-vim.keymap.set("n", "<leader>gc", function()
-  vim.cmd("Git commit")
-  vim.cmd("split")
-  vim.cmd("wincmd j")
-  vim.cmd("bprevious")
-  vim.cmd("wincmd k")
-end)
-
 vim.keymap.set("n", "<leader>w", function()
   vim.cmd("w")
   vim.cmd("Fix")
