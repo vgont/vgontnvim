@@ -23,6 +23,19 @@ return {
     require("mini.diff").setup()
     require("mini.git").setup()
 
+    require("mini.move").setup({
+      mappings = {
+        left = "<M-left>";
+        right = "<M-right>";
+        down = "<M-down>";
+        up = "<M-up>";
+        line_left = "<M-left>";
+        line_right = "<M-right>";
+        line_down = "<M-down>";
+        line_up = "<M-up>";
+      };
+    })
+
     require("mini.pairs").setup({
       disable_in_visualblock = true,
       disable_in_insert = true,
@@ -31,7 +44,7 @@ return {
 
     require("mini.pick").setup({
       window = {
-	config = { border = "rounded" }
+        config = { border = "rounded" }
       }
     })
   end,
