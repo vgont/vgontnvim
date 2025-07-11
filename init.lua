@@ -1,38 +1,33 @@
-require("config.lazy")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set clipboard=unnamedplus")
-vim.cmd [[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-]]
-
+-- Options
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.clipboard = "unnamedplus"
 vim.opt.numberwidth = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
-
 vim.opt.signcolumn = "no"
 
-vim.keymap.set("n", "<leader>q", function()
-  if #vim.fn.getbufinfo({buflisted = 1}) <= 1 then
-    vim.cmd("Oil")
-  else
-    vim.cmd("bd")
-  end
-end)
+-- Hightlight
+vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
+vim.api.nvim_set_hl(0, "NonText", { bg = "none", ctermbg = "none" })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = "none", ctermbg = "none" })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none", ctermbg = "none" })
+vim.api.nvim_set_hl(0, 'YankHighlight', { bg = "#83a598" })
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- Yank Hightlight
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight_yank', {}),
+  desc = 'Hightlight selection on yank',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank { higroup = 'YankHighlight', timeout = 150 }
+  end,
+})
 
-vim.keymap.set("n", "<leader>w", function()
-  vim.cmd("w")
-  vim.cmd("Fix")
-end)
-
-vim.api.nvim_create_user_command('Fix', ':EslintFixAll', {desc = "Fix all the errors in ESLint"})
-
+require("keymap")
+require("config.lazy")
