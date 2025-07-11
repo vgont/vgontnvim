@@ -7,6 +7,7 @@ return {
       vim.lsp.enable('lua_ls')
       vim.lsp.enable('ts_ls')
       vim.lsp.enable('eslint')
+      vim.lsp.enable('omnisharp')
 
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
