@@ -1,7 +1,6 @@
 return {
   'echasnovski/mini.nvim',
   version = "*",
-  lazy = false,
   config = function()
     require("mini.ai").setup()
 
@@ -23,6 +22,10 @@ return {
 
     require("mini.pick").setup()
 
+    require("mini.diff").setup()
+
+    require("mini.git").setup()
+
     require("mini.pairs").setup({
       disable_in_visualblock = true,
       disable_in_insert = true,
@@ -34,19 +37,6 @@ return {
 	config = { border = "rounded" }
       }
     })
-
-    require("mini.diff").setup()
-
-    require("mini.git").setup()
-
-    local notify = require("mini.notify")
-    notify.setup({
-      window = {
-	config = { border = "rounded" },
-	winblend = 0
-      }
-    })
-    vim.notify = notify.make_notify()
   end,
 
   keys = {
