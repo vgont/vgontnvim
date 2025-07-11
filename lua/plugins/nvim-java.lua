@@ -1,1 +1,5 @@
-return {'nvim-java/nvim-java'}
+return {
+  'nvim-java/nvim-java',
+  ft = 'java',
+  opts = {}
+}
