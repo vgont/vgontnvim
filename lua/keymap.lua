@@ -1,6 +1,7 @@
--- Buffer Navigation
+-- Buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>')
+vim.keymap.set('n', '<leader>q', ':bd<CR>')
 
 -- Just Insanity
 vim.keymap.set('n', '<leader>O', 'mzO<Esc>`z<cmd>delm z<CR>', { desc = "Add blank line above" })
