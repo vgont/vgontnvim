@@ -1,29 +1,26 @@
 return {
   'echasnovski/mini.nvim',
   version = "*",
+  init = function()
+    require("mini.notify").setup({
+      window = {
+	config = { border = "rounded" },
+	winblend = 0
+      }
+    })
+    vim.notify = require("mini.notify").make_notify()
+  end,
   config = function()
     require("mini.ai").setup()
-
     require("mini.icons").setup()
-
     require("mini.surround").setup()
-
     require("mini.operators").setup()
-
     require("mini.indentscope").setup()
-
     require("mini.bracketed").setup()
-
     require("mini.jump").setup()
-
     require("mini.statusline").setup()
-
     require("mini.splitjoin").setup()
-
-    require("mini.pick").setup()
-
     require("mini.diff").setup()
-
     require("mini.git").setup()
 
     require("mini.pairs").setup({
@@ -38,15 +35,13 @@ return {
       }
     })
   end,
-
   keys = {
-    { "<leader>pf", "<cmd>Pick files<CR>", desc = "files picker" },
-    { "<leader>pg", "<cmd>Pick grep_live<CR>", desc = "grep picker" },
-    { "<leader>pb", "<cmd>Pick buffers<CR>", desc = "buffers picker" },
-
-    { "<leader>gc", "<cmd>Git commit<CR>", desc = "git commit" },
-    { "<leader>gt", "<cmd>Git status<CR>", desc = "git status" },
-    { "<leader>gs", "<cmd>lua MiniGit.show_at_cursor()<CR>", desc = "git related data" },
+    { "<leader>pf", "<cmd>Pick files<CR>",                    desc = "files picker" },
+    { "<leader>pg", "<cmd>Pick grep_live<CR>",                desc = "grep picker" },
+    { "<leader>pb", "<cmd>Pick buffers<CR>",                  desc = "buffers picker" },
+    { "<leader>gc", "<cmd>Git commit<CR>",                    desc = "git commit" },
+    { "<leader>gt", "<cmd>Git status<CR>",                    desc = "git status" },
+    { "<leader>gs", "<cmd>lua MiniGit.show_at_cursor()<CR>",  desc = "git related data" },
     { "<leader>go", "<cmd>lua MiniDiff.toggle_overlay()<CR>", desc = "toggle git diff" },
   },
 }
