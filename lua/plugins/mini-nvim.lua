@@ -1,11 +1,12 @@
 return {
   'echasnovski/mini.nvim',
   version = "*",
+  priority = 1000,
   init = function()
     require("mini.notify").setup({
       window = {
-	config = { border = "rounded" },
-	winblend = 0
+        config = { border = "rounded" },
+        winblend = 0
       }
     })
     vim.notify = require("mini.notify").make_notify()
@@ -25,15 +26,15 @@ return {
 
     require("mini.move").setup({
       mappings = {
-        left = "<M-left>";
-        right = "<M-right>";
-        down = "<M-down>";
-        up = "<M-up>";
-        line_left = "<M-left>";
-        line_right = "<M-right>";
-        line_down = "<M-down>";
-        line_up = "<M-up>";
-      };
+        left = "<M-left>",
+        right = "<M-right>",
+        down = "<M-down>",
+        up = "<M-up>",
+        line_left = "<M-left>",
+        line_right = "<M-right>",
+        line_down = "<M-down>",
+        line_up = "<M-up>",
+      },
     })
 
     require("mini.pairs").setup({
