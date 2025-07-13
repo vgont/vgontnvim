@@ -1,4 +1,4 @@
-local colorscheme = "gruvbox"
+local colorscheme = "vague"
 
 return {
   -- Gruvbox
@@ -51,7 +51,7 @@ return {
     enabled = colorscheme == "vague",
     config = function()
       require("vague").setup({
-        transparent = true,
+        transparent = false,
       })
       vim.cmd.colorscheme "vague"
     end
