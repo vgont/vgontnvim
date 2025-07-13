@@ -17,7 +17,6 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
 vim.api.nvim_set_hl(0, "NonText", { bg = "none", ctermbg = "none" })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = "none", ctermbg = "none" })
 vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none", ctermbg = "none" })
-vim.api.nvim_set_hl(0, 'YankHighlight', { bg = "#83a598" })
 
 -- Yank Hightlight
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -25,7 +24,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Hightlight selection on yank',
   pattern = '*',
   callback = function()
-    vim.highlight.on_yank { higroup = 'YankHighlight', timeout = 150 }
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 150 }
   end,
 })
 
