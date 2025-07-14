@@ -11,6 +11,8 @@ vim.opt.numberwidth = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Hightlight
 vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
