@@ -23,8 +23,8 @@ return {
       vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 
       vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float, {})
-      vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)
-      vim.keymap.set("n", "<leader>dN", vim.diagnostic.goto_prev, opts)
+      vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {})
+      vim.keymap.set("n", "<leader>dl", vim.diagnostic.goto_prev, {})
     end
   }
 }
