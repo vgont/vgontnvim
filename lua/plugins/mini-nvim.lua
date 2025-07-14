@@ -16,9 +16,6 @@ return {
     require("mini.icons").setup()
     require("mini.surround").setup()
     require("mini.operators").setup()
-    require("mini.indentscope").setup()
-    require("mini.bracketed").setup()
-    require("mini.statusline").setup()
     require("mini.diff").setup()
     require("mini.git").setup()
 
