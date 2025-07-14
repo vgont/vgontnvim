@@ -13,6 +13,7 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.signcolumn = "yes"
 
 -- Hightlight
 vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
