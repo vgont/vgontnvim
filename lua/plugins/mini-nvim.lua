@@ -30,17 +30,8 @@ return {
         line_up = "<M-up>",
       },
     })
-
-    require("mini.pick").setup({
-      window = {
-        config = { border = "rounded" }
-      }
-    })
   end,
   keys = {
-    { "<leader>pf", "<cmd>Pick files<CR>",                    desc = "file picker" },
-    { "<leader>pg", "<cmd>Pick grep_live<CR>",                desc = "grep picker" },
-    { "<leader>pb", "<cmd>Pick buffers<CR>",                  desc = "buffer picker" },
     { "<leader>gc", "<cmd>Git commit<CR>",                    desc = "git commit" },
     { "<leader>gt", "<cmd>Git status<CR>",                    desc = "git status" },
     { "<leader>gs", "<cmd>lua MiniGit.show_at_cursor()<CR>",  desc = "git related data" },
