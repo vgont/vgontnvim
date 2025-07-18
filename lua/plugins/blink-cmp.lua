@@ -3,14 +3,10 @@ return {
   dependencies = 'rafamadriz/friendly-snippets',
   version = '*',
   ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
   opts = {
     keymap = {
-      ['<C-j>'] = { 'select_next', 'fallback' },
-      ['<C-k>'] = { 'select_prev', 'fallback' },
       ['<C-c>'] = { 'hide_documentation', 'fallback' },
-      ['<C-a>'] = { 'select_and_accept', 'fallback' },
-
+      ['<Enter>'] = { 'select_and_accept', 'fallback' },
     },
     completion = {
       list = {
@@ -28,7 +24,14 @@ return {
       nerd_font_variant = 'mono'
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'buffer', 'snippets', 'path' },
+
+      per_filetype = {
+        sql = { 'dadbod' },
+      },
+      providers = {
+        dadbod = { module = "vim_dadbod_completion.blink" },
+      }
     },
   },
   opts_extend = { "sources.default" }

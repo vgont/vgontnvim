@@ -15,7 +15,6 @@ return {
     require("mini.ai").setup()
     require("mini.icons").setup()
     require("mini.surround").setup()
-    require("mini.operators").setup()
     require("mini.diff").setup()
     require("mini.git").setup()
 
