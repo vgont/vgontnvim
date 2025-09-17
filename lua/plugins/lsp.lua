@@ -8,10 +8,14 @@ return {
         virtual_text = true
       })
 
+      require('lspconfig')
+
       vim.lsp.enable('lua_ls')
       vim.lsp.enable('ts_ls')
       vim.lsp.enable('eslint')
       vim.lsp.enable('nil_ls')
+      vim.lsp.enable('terraformls')
+      vim.lsp.enable('marksman')
 
       require('lsp.omnisharp').setup()
 

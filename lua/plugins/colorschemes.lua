@@ -1,4 +1,4 @@
-local colorscheme = "vague"
+local colorscheme = "overtones"
 
 return {
   -- Gruvbox
@@ -55,5 +55,16 @@ return {
       })
       vim.cmd.colorscheme "vague"
     end
+  },
+
+  -- Overtones
+  {
+      "ericdwhite/overtones.nvim",
+    enabled = colorscheme == "overtones",
+      lazy = false,
+      priority = 1000,
+      config = function()
+      vim.cmd.colorscheme "overtones"
+    end,
   }
 }
