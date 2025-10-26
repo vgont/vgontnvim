@@ -18,6 +18,12 @@ return {
     require("mini.diff").setup()
     require("mini.git").setup()
 
+    require("mini.operators").setup({
+      replace = {
+        prefix = "",
+      },
+    })
+
     require("mini.move").setup({
       mappings = {
         left = "<M-left>",

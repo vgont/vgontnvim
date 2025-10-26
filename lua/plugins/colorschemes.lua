@@ -1,4 +1,4 @@
-local colorscheme = "overtones"
+-- local colorscheme = "vague"
 
 return {
   -- Gruvbox
@@ -59,12 +59,35 @@ return {
 
   -- Overtones
   {
-      "ericdwhite/overtones.nvim",
+    "ericdwhite/overtones.nvim",
     enabled = colorscheme == "overtones",
-      lazy = false,
-      priority = 1000,
-      config = function()
+    lazy = false,
+    priority = 1000,
+    config = function()
       vim.cmd.colorscheme "overtones"
     end,
+  },
+
+  -- Bamboo
+  {
+    "ribru17/bamboo.nvim",
+    enabled = colorscheme == "bamboo",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("bamboo").setup({})
+      require("bamboo").load()
+    end,
+  },
+  {
+    'jesseleite/nvim-noirbuddy',
+    dependencies = {
+      { 'tjdevries/colorbuddy.nvim' }
+    },
+    lazy = false,
+    priority = 1000,
+    opts = {
+      preset = 'minimal'
+    },
   }
 }
