@@ -17,6 +17,7 @@ return {
       vim.lsp.enable('terraformls')
       vim.lsp.enable('marksman')
       vim.lsp.enable('gopls')
+      vim.lsp.enable('copilot')
 
       require('lsp.omnisharp').setup()
 

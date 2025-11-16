@@ -7,6 +7,13 @@ return {
     keymap = {
       ['<C-c>'] = { 'hide_documentation', 'fallback' },
       ['<Enter>'] = { 'select_and_accept', 'fallback' },
+      ["<Tab>"] = {
+        "snippet_forward",
+        function()         -- sidekick next edit suggestion
+          return require("sidekick").nes_jump_or_apply()
+        end,
+        "fallback",
+      },
     },
     completion = {
       list = {
