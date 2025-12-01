@@ -1,4 +1,28 @@
+local lsps = {
+  'lua_ls',
+  'ts_ls',
+  'eslint',
+  'terraformls',
+  'marksman',
+  'gopls',
+  'pylsp',
+}
+
 return {
+  {
+    "mason-org/mason.nvim",
+    opts = {}
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+    opts = {
+      ensure_installed = lsps,
+    },
+  },
   {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -10,13 +34,9 @@ return {
 
       require('lspconfig')
 
-      vim.lsp.enable('lua_ls')
-      vim.lsp.enable('ts_ls')
-      vim.lsp.enable('eslint')
-      vim.lsp.enable('nil_ls')
-      vim.lsp.enable('terraformls')
-      vim.lsp.enable('marksman')
-      vim.lsp.enable('gopls')
+      for _, lsp in ipairs(lsps) do
+        vim.lsp.enable(lsp)
+      end
 
       require('lsp.omnisharp').setup()
 
