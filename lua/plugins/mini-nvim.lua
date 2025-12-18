@@ -37,11 +37,17 @@ return {
       },
     })
 
-    require("mini.pick").setup({
+    local MiniPick = require("mini.pick")
+    MiniPick.setup({
       options = {
         use_cache = true
       }
     })
+
+    MiniPick.registry.pick_current_dir = function()
+      local dir = vim.fn.expand('%:p:h')
+      return MiniPick.builtin.files({}, { source = { cwd = dir } })
+    end
   end,
   keys = {
     { "<leader>gc", "<cmd>Git commit<CR>",                       desc = "git commit" },
@@ -50,6 +56,7 @@ return {
     { "<leader>go", "<cmd>lua MiniDiff.toggle_overlay()<CR>",    desc = "toggle git diff" },
 
     { "<leader>pf", "<cmd>lua MiniPick.builtin.files()<CR>",     desc = "pick files" },
+    { "<leader>pp", "<cmd>lua MiniPick.registry.pick_current_dir()<CR>", desc = 'pick current directory' },
     { "<leader>pb", "<cmd>lua MiniPick.builtin.buffers()<CR>",   desc = 'pick buffers' },
     { "<leader>pg", "<cmd>lua MiniPick.builtin.grep_live()<CR>", desc = 'live grep' },
     { "<leader>p.", "<cmd>lua MiniPick.builtin.resume()<CR>",    desc = 'resume last picker' },

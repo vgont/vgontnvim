@@ -6,6 +6,7 @@ local lsps = {
   'marksman',
   'gopls',
   'pylsp',
+  'bashls',
 }
 
 return {
