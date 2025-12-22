@@ -16,7 +16,7 @@ return {
     {
       "<C-n>",
       function()
-        local dir = vim.fn.expand('%:p:h'):gsub(vim.env.HOME, '~')
+        local dir = vim.fn.expand('%:p:h'):gsub(vim.env.HOME, '~'):gsub('oil://', '')
         vim.cmd("ToggleTerm dir=" .. dir .. " name=" .. dir)
       end,
       desc = "Select Terminal"
