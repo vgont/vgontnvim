@@ -4,22 +4,13 @@ return {
   opts = {
     open_mapping = [[<c-\>]],
     hide_numbers = false,
-    close_on_exit = true,
     direction = 'float',
-    width = 0.40,
-    float_opts = {
-      border = 'curved',
-    },
   },
-  keys = {
-    { "<C-t>", "<cmd>TermSelect<cr>", desc = "Select Terminal" },
-    {
-      "<C-n>",
-      function()
-        local dir = vim.fn.expand('%:p:h'):gsub(vim.env.HOME, '~'):gsub('oil://', '')
-        vim.cmd("ToggleTerm dir=" .. dir .. " name=" .. dir)
-      end,
-      desc = "Select Terminal"
-    },
-  },
+  config = function(_, opts)
+    require('toggleterm').setup(opts)
+    local dir = vim.fn.expand('%:p:h'):gsub(vim.env.HOME, '~'):gsub('oil://', '')
+    vim.keymap.set("x", "<leader>tv", function() vim.cmd("'<,'>ToggleTermSendVisualSelection") end)
+    vim.keymap.set("n", "<leader>tf", function() vim.cmd("ToggleTerm dir=" .. dir .. " name=" .. dir) end)
+    vim.keymap.set("n", "<leader>tt", function() vim.cmd("ToggleTerm direction=horizontal") end)
+  end
 }
