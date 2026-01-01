@@ -19,6 +19,9 @@ return {
         set({"n", "x"}, "<leader>N", function() mc.matchAddCursor(-1) end)
         set({"n", "x"}, "<leader>S", function() mc.matchSkipCursor(-1) end)
 
+        -- Add a cursor to every search result in the buffer.
+        set("n", "<leader>A", mc.searchAllAddCursors)
+
         -- Add and remove cursors with control + left click.
         set("n", "<c-leftmouse>", mc.handleMouse)
         set("n", "<c-leftdrag>", mc.handleMouseDrag)
