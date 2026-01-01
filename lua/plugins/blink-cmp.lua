@@ -7,13 +7,6 @@ return {
     keymap = {
       ['<C-c>'] = { 'hide_documentation', 'fallback' },
       ['<Enter>'] = { 'select_and_accept', 'fallback' },
-      ["<Tab>"] = {
-        "snippet_forward",
-        function()         -- sidekick next edit suggestion
-          return require("sidekick").nes_jump_or_apply()
-        end,
-        "fallback",
-      },
     },
     completion = {
       list = {
@@ -32,13 +25,6 @@ return {
     },
     sources = {
       default = { 'lsp', 'buffer', 'snippets', 'path' },
-
-      per_filetype = {
-        sql = { 'dadbod' },
-      },
-      providers = {
-        dadbod = { module = "vim_dadbod_completion.blink" },
-      }
     },
   },
   opts_extend = { "sources.default" }
