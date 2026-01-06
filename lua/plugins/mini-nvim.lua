@@ -32,7 +32,7 @@ return {
       }
     })
     MiniPick.registry.pick_current_dir = function()
-      local dir = vim.fn.expand('%:p:h')
+      local dir = vim.fn.expand('%:p:h'):gsub(vim.env.HOME, '~'):gsub('oil://', '')
       return MiniPick.builtin.files({}, { source = { cwd = dir } })
     end
   end,
