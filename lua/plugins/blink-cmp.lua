@@ -27,5 +27,11 @@ return {
       default = { 'lsp', 'buffer', 'snippets', 'path' },
     },
   },
-  opts_extend = { "sources.default" }
+  opts_extend = { "sources.default" },
+  cmdline = {
+    keymap = {
+      ['<Tab>'] = { 'show', 'accept' },
+    },
+    completion = { menu = { auto_show = true } },
+  }
 }
