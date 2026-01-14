@@ -12,7 +12,6 @@ return {
     vim.notify = require("mini.notify").make_notify()
   end,
   config = function()
-    vim.opt.pumheight = 5 -- Limit popup menu height to 5 items
     require("mini.ai").setup()
     require("mini.icons").setup()
     require("mini.surround").setup()
@@ -20,6 +19,13 @@ return {
     require("mini.git").setup()
     require("mini.move").setup()
     require("mini.cmdline").setup()
+    require("mini.indentscope").setup()
+
+    require("mini.files").setup({
+      windows = {
+        preview = true,
+      }
+    })
 
     require("mini.operators").setup({
       replace = {
@@ -42,6 +48,7 @@ return {
     MiniCompletion.setup({ delay = { completion = 15 } })
   end,
   keys = {
+    -- MiniGit
     { "<leader>gc", "<cmd>Git commit<CR>",                    desc = "git commit",       mode = { "n" } },
     { "<leader>gt", "<cmd>Git status<CR>",                    desc = "git status",       mode = { "n" } },
     { "<leader>gs", "<cmd>lua MiniGit.show_at_cursor()<CR>",  desc = "git related data", mode = { "n" } },
@@ -61,10 +68,15 @@ return {
       mode = { "x" }
     },
 
-    { "<leader>pf", "<cmd>lua MiniPick.builtin.files()<CR>",             desc = "pick files",             mode = { "n" } },
-    { "<leader>pp", "<cmd>lua MiniPick.registry.pick_current_dir()<CR>", desc = 'pick current directory', mode = { "n" } },
-    { "<leader>pb", "<cmd>lua MiniPick.builtin.buffers()<CR>",           desc = 'pick buffers',           mode = { "n" } },
-    { "<leader>pg", "<cmd>lua MiniPick.builtin.grep_live()<CR>",         desc = 'live grep',              mode = { "n" } },
-    { "<leader>p.", "<cmd>lua MiniPick.builtin.resume()<CR>",            desc = 'resume last picker',     mode = { "n" } },
+    -- MiniPick
+    { "<leader>pf", "<cmd>lua MiniPick.builtin.files()<CR>",                            desc = "pick files",                         mode = { "n" } },
+    { "<leader>pp", "<cmd>lua MiniPick.registry.pick_current_dir()<CR>",                desc = 'pick current directory',             mode = { "n" } },
+    { "<leader>pb", "<cmd>lua MiniPick.builtin.buffers()<CR>",                          desc = 'pick buffers',                       mode = { "n" } },
+    { "<leader>pg", "<cmd>lua MiniPick.builtin.grep_live()<CR>",                        desc = 'live grep',                          mode = { "n" } },
+    { "<leader>p.", "<cmd>lua MiniPick.builtin.resume()<CR>",                           desc = 'resume last picker',                 mode = { "n" } },
+
+    -- MiniFiles
+    { "<leader>fe", "<cmd>lua MiniFiles.open()<CR>",                                    desc = "Open MiniFiles" },
+    { "<leader>ff", "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", desc = "Open MiniFiles in current directory" },
   },
 }
