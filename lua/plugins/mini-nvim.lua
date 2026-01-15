@@ -70,13 +70,13 @@ return {
 
     -- MiniPick
     { "<leader>pf", "<cmd>lua MiniPick.builtin.files()<CR>",                            desc = "pick files",                         mode = { "n" } },
-    { "<leader>pp", "<cmd>lua MiniPick.registry.pick_current_dir()<CR>",                desc = 'pick current directory',             mode = { "n" } },
+    { "<leader>P",  "<cmd>lua MiniPick.registry.pick_current_dir()<CR>",                desc = 'pick current directory',             mode = { "n" } },
     { "<leader>pb", "<cmd>lua MiniPick.builtin.buffers()<CR>",                          desc = 'pick buffers',                       mode = { "n" } },
     { "<leader>pg", "<cmd>lua MiniPick.builtin.grep_live()<CR>",                        desc = 'live grep',                          mode = { "n" } },
     { "<leader>p.", "<cmd>lua MiniPick.builtin.resume()<CR>",                           desc = 'resume last picker',                 mode = { "n" } },
 
     -- MiniFiles
     { "<leader>fe", "<cmd>lua MiniFiles.open()<CR>",                                    desc = "Open MiniFiles" },
-    { "<leader>ff", "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", desc = "Open MiniFiles in current directory" },
+    { "<leader>F",  "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", desc = "Open MiniFiles in current directory" },
   },
 }
