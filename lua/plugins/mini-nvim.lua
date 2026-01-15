@@ -20,6 +20,10 @@ return {
     require("mini.move").setup()
     require("mini.cmdline").setup()
     require("mini.indentscope").setup()
+    require("mini.pairs").setup()
+    require("mini.starter").setup({ autoopen = false })
+    require("mini.sessions").setup({ force = { delete = true } })
+
 
     require("mini.files").setup({
       windows = {
@@ -42,6 +46,17 @@ return {
     MiniPick.registry.pick_current_dir = function()
       local dir = vim.fn.expand('%:p:h'):gsub(vim.env.HOME, '~'):gsub('oil://', '')
       return MiniPick.builtin.files({}, { source = { cwd = dir } })
+    end
+
+    MiniPick.registry.pick_dir = function()
+      local show = MiniPick.default_show
+      local opts = {
+        source = {
+          name = 'Directories (fd)',
+          show = show
+        }
+      }
+      return MiniPick.builtin.cli({ command = { 'fd', '-t', 'd' } }, opts)
     end
 
     local MiniCompletion = require("mini.completion")
@@ -69,14 +84,35 @@ return {
     },
 
     -- MiniPick
-    { "<leader>pf", "<cmd>lua MiniPick.builtin.files()<CR>",                            desc = "pick files",                         mode = { "n" } },
-    { "<leader>P",  "<cmd>lua MiniPick.registry.pick_current_dir()<CR>",                desc = 'pick current directory',             mode = { "n" } },
-    { "<leader>pb", "<cmd>lua MiniPick.builtin.buffers()<CR>",                          desc = 'pick buffers',                       mode = { "n" } },
-    { "<leader>pg", "<cmd>lua MiniPick.builtin.grep_live()<CR>",                        desc = 'live grep',                          mode = { "n" } },
-    { "<leader>p.", "<cmd>lua MiniPick.builtin.resume()<CR>",                           desc = 'resume last picker',                 mode = { "n" } },
+    { "<leader>pf", "<cmd>lua MiniPick.builtin.files()<CR>",                            desc = "pick files",                          mode = { "n" } },
+    { "<leader>P",  "<cmd>lua MiniPick.registry.pick_current_dir()<CR>",                desc = 'pick current directory',              mode = { "n" } },
+    { "<leader>pd", "<cmd>lua MiniPick.registry.pick_dir()<CR>",                        desc = 'pick directories',                    mode = { "n" } },
+    { "<leader>pb", "<cmd>lua MiniPick.builtin.buffers()<CR>",                          desc = 'pick buffers',                        mode = { "n" } },
+    { "<leader>pg", "<cmd>lua MiniPick.builtin.grep_live()<CR>",                        desc = 'live grep',                           mode = { "n" } },
+    { "<leader>p.", "<cmd>lua MiniPick.builtin.resume()<CR>",                           desc = 'resume last picker',                  mode = { "n" } },
 
     -- MiniFiles
     { "<leader>fe", "<cmd>lua MiniFiles.open()<CR>",                                    desc = "Open MiniFiles" },
     { "<leader>F",  "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", desc = "Open MiniFiles in current directory" },
+
+    -- MiniOperators
+    { "<leader>ol", "<cmd>norm gxiagxina<CR>",                                          desc = "Switch current argument to the right" },
+    { "<leader>oh", "<cmd>norm gxiagxila<CR>",                                          desc = "Switch current argument to the left" },
+
+    -- MiniStarter
+    { "<leader>st", "<cmd>lua MiniStarter.open()<CR>",                                  desc = "Open MiniStarter" },
+
+    -- MiniSessions
+    {
+      "<leader>sn",
+      function()
+        local session_name = vim.fn.input("Session name: ")
+        if session_name ~= "" then
+          require("mini.sessions").write(session_name)
+        end
+      end,
+      desc = "Save session"
+    },
+    { "<leader>sd", "<cmd>lua MiniSessions.delete()<CR>", desc = "Delete session" },
   },
 }
