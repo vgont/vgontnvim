@@ -15,6 +15,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 vim.opt.showmode = false
+vim.opt.inccommand = "split"
 vim.opt.pumheight = 5 -- Limit popup menu height to 5 items
 
 -- Hightlight
