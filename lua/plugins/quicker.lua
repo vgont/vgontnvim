@@ -29,7 +29,9 @@ return {
       },
     }
 
-    vim.keymap.set("n", "<leader>q", function() quicker.toggle() end, { desc = "Toggle quickfix", })
+    vim.keymap.set("n", "<leader>Q", function() quicker.toggle() end, { desc = "Toggle quickfix", })
     vim.keymap.set("n", "<leader>l", function() quicker.toggle({ loclist = true }) end, { desc = "Toggle loclist", })
+    vim.keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = "Next quickfix", })
+    vim.keymap.set("n", "<leader>qp", ":cprevious<CR>", { desc = "Previous quickfix", })
   end
 }
