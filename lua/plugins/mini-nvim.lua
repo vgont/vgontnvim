@@ -66,6 +66,7 @@ return {
     -- MiniGit
     { "<leader>gc", "<cmd>Git commit<CR>",                    desc = "git commit",       mode = { "n" } },
     { "<leader>gt", "<cmd>Git status<CR>",                    desc = "git status",       mode = { "n" } },
+    { "<leader>gl", "<cmd>Git log<CR>",                       desc = "git log",          mode = { "n" } },
     { "<leader>gs", "<cmd>lua MiniGit.show_at_cursor()<CR>",  desc = "git related data", mode = { "n" } },
     { "<leader>go", "<cmd>lua MiniDiff.toggle_overlay()<CR>", desc = "toggle git diff",  mode = { "n" } },
     {
