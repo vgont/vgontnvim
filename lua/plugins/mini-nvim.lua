@@ -21,6 +21,7 @@ return {
     require("mini.cmdline").setup()
     require("mini.indentscope").setup()
     require("mini.pairs").setup()
+    require("mini.splitjoin").setup()
     require("mini.starter").setup({ autoopen = false })
     require("mini.sessions").setup({ force = { delete = true } })
 
