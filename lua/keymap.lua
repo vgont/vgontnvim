@@ -1,9 +1,9 @@
 -- Buffers, Tabs
-vim.keymap.set('n', '<Tab><Tab>', ':tabnew<CR>', { desc = "New Tab" })
-vim.keymap.set('n', '<Tab>n', ':tabnext<CR>', { desc = "Next Tab" })
-vim.keymap.set('n', '<Tab>p', ':tabprev<CR>', { desc = "Previous Tab" })
+vim.keymap.set('n', '<C-t><C-t>', ':tabnew<CR>', { desc = "New Tab" })
+vim.keymap.set('n', '<C-t>n', ':tabnext<CR>', { desc = "Next Tab" })
+vim.keymap.set('n', '<C-t>p', ':tabprev<CR>', { desc = "Previous Tab" })
 
-vim.keymap.set('n', '<Tab>c', ':bd<CR>', { desc = "Close buffer" })
+vim.keymap.set('n', '<C-t>c', ':bd<CR>', { desc = "Close buffer" })
 
 -- Good ones
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
