@@ -8,6 +8,7 @@ local lsps = {
   'gopls',
   'pylsp',
   'bashls',
+  'tinymist',
 }
 
 return {
