@@ -1,6 +1,5 @@
 return {
   'stevearc/quicker.nvim',
-  ft = "qf",
   ---@module "quicker"
   config = function()
     local quicker = require("quicker")
@@ -31,5 +30,17 @@ return {
 
     vim.keymap.set("n", "<leader>q", function() quicker.toggle() end, { desc = "Toggle quickfix", })
     vim.keymap.set("n", "<leader>l", function() quicker.toggle({ loclist = true }) end, { desc = "Toggle loclist", })
+
+    vim.keymap.set("x", "<leader>gq", function()
+      vim.cmd('noautocmd normal! "vy')
+      local selection = vim.fn.getreg("v")
+      if selection == "" then return end
+
+      local escaped = vim.fn.escape(selection, "/\\")
+      local dir = vim.fn.expand("%:p:h")
+
+      vim.cmd("vimgrep /" .. escaped .. "/ " .. vim.fn.fnameescape(dir) .. "/**")
+      vim.cmd("cw")
+    end, { desc = "Vimgrep visual selection in current file's directory" })
   end
 }

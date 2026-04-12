@@ -13,7 +13,7 @@ return {
 
       lualine_x = { "fileformat", "filetype" },
       lualine_y = { "lsp_status" },
-      lualine_z = {}
+      lualine_z = { "encoding" }
     }
   },
 }

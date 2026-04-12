@@ -16,10 +16,8 @@ return {
     vim.o.autoread = true
 
     -- Recommended/example keymaps.
-    vim.keymap.set({ "n", "x" }, "<leader>oa", function() require("opencode").ask("@this: ", { submit = true }) end,
+    vim.keymap.set({ "n", "x" }, "<leader>oa", function() require("opencode").ask("", { submit = true }) end,
       { desc = "Ask opencode…" })
-    vim.keymap.set({ "n", "x" }, "<leader>os", function() require("opencode").ask("/agents", { submit = true }) end,
-      { desc = "Switch agent" })
     vim.keymap.set({ "n", "x" }, "<leader>ox", function() require("opencode").select() end,
       { desc = "Execute opencode action…" })
     vim.keymap.set({ "n", "t" }, "<leader>O", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
@@ -28,6 +26,22 @@ return {
       { desc = "Add range to opencode", expr = true })
     vim.keymap.set("n", "<leader>oo", function() return require("opencode").operator("@this ") .. "_" end,
       { desc = "Add line to opencode", expr = true })
+
+    vim.keymap.set("n", "<leader>on", function() return require("opencode").command("agent.cycle") end,
+      { desc = "Cycle opencode agent" })
+
+    vim.keymap.set({ "n", "x" }, "<leader>oi",
+      function()
+        require("opencode").command("session.interrupt")
+        require("opencode").command("session.interrupt")
+      end,
+      { desc = "Interrupt opencode" })
+
+    vim.keymap.set({ "n", "x" }, "<leader>ok",
+      function()
+        require("opencode").stop()
+      end,
+      { desc = "Interrupt opencode" })
 
     vim.keymap.set("n", "<S-C-u>", function() require("opencode").command("session.half.page.up") end,
       { desc = "Scroll opencode up" })
